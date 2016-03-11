@@ -13,7 +13,7 @@ public class Maintenance_Activities {
     
 	private Maintenance_DAO maintDAO = new Maintenance_DAO();
 
-    //Create a new facility maintenance request
+    //Creates a new facility maintenance request
 	public void makeFacilityMaintRequest(int facilityId, int maintId, String maintenanceDescription, String status, double cost) {			
 		try {
 			maintDAO.makeFacilityMaintRequest(facilityId, maintId, maintenanceDescription, status, cost);
@@ -36,7 +36,7 @@ public class Maintenance_Activities {
 	    }
 	}
 	
-    //Calculates the percentage of time down during a year (number of days down/365)
+    //Calculates the percentage of downtime during a year (number of days down/365*100 to get a percentage of time during a year)
     public double calcProblemRateForFacility(int facilityId, String status){
     	int downtime = 0;
     	
@@ -52,7 +52,7 @@ public class Maintenance_Activities {
 
 
 
-    //Calculates the total downtime for open maintenance requests -- the total number of requests a facility has had
+    //Calculates the total downtime for open maintenance requests -- the total number of days a facility has had during the year.
     public int calcDownTimeForFacility(int facilityId) {
     	int downtime = 0;
     	
@@ -83,7 +83,7 @@ public class Maintenance_Activities {
 	}
 
 
-    //Lists all open maintenance requests for whole portfolio
+    //Lists all open maintenance requests for facility
     public List<Facility_Maintenance> listMaintenance(int facilityId){		
 		try {
 			return maintDAO.listMaintenance(facilityId);
@@ -109,7 +109,7 @@ public class Maintenance_Activities {
 		return null;
 	}
 
-
+	//calculates the total cost from work order repairs 
 	public int calcMaintanceCostForFacility(int facilityId) {
     	
 		try {

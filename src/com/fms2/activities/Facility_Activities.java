@@ -69,7 +69,7 @@ public class Facility_Activities {
         return null;
     }
 
-    //Return the facility capacity
+    //Return the facility capacity (the capacity is how many people a space can hold).
     public int requestAvailableCapacity(int facilityId) {		
 	try {
 		return facDAO.requestAvailableCapacity(facilityId);

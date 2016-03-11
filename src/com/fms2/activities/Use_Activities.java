@@ -38,7 +38,7 @@ public class Use_Activities {
 		return false;
 	}
     
-    //set facility to use
+    //sets facility to use
     public void assignFacilityToUse(int facilityId, Calendar startDate, Calendar endDate){    	
 		
 		try {

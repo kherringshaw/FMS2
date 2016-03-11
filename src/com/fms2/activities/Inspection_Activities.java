@@ -18,7 +18,7 @@ public class Inspection_Activities {
 	private Inspection_DAO inspectDAO = new Inspection_DAO();
 	
 	
-	
+	//creates a new facility inspection
 	public void createInspection(int facilityId, int inspectId, String description, String assignedTo, String status, 
 			Calendar dateAssigned, Calendar dateClosed) {
 		try {
@@ -30,7 +30,7 @@ public class Inspection_Activities {
 	    }
 	}
 
-
+	//queries the facilities inspections both completed and open
 	public List<Facility_Inspections> listInspections(int facilityId) {
 		try {
 			return inspectDAO.listInspections(facilityId);

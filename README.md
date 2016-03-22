@@ -1,92 +1,92 @@
 "# FMS2" 
 
-Database setup:
+Database setup:<br>
 
 
 
-mysql> use fms;
-Database changed
-mysql> show tables;
-+----------------------+
-| Tables_in_fms        |
-+----------------------+
-| facility             |
-| facility_use         |
-| inspections          |
-| maintenance_request  |
-| maintenance_schedule |
-| users                |
-+----------------------+
-7 rows in set (0.06 sec)
+mysql> use fms;<br>
+Database changed<br>
+mysql> show tables;<br>
++----------------------+<br>
+| Tables_in_fms        |<br>
++----------------------+<br>
+| facility             |<br>
+| facility_use         |<br>
+| inspections          |<br>
+| maintenance_request  |<br>
+| maintenance_schedule |<br>
+| users                |<br>
++----------------------+<br>
+7 rows in set (0.06 sec)<br>
 
 
 
-mysql> describe facility;
-+------------+--------------+------+-----+---------+-------+
-| Field      | Type         | Null | Key | Default | Extra |
-+------------+--------------+------+-----+---------+-------+
-| facilityId | int(11)      | YES  |     | NULL    |       |
-| owner      | varchar(255) | YES  |     | NULL    |       |
-| address1   | varchar(255) | YES  |     | NULL    |       |
-| address2   | varchar(255) | YES  |     | NULL    |       |
-| city       | varchar(255) | YES  |     | NULL    |       |
-| state      | varchar(255) | YES  |     | NULL    |       |
-| zip        | varchar(255) | YES  |     | NULL    |       |
-| rate       | double       | YES  |     | NULL    |       |
-| capacity   | int(11)      | YES  |     | NULL    |       |
-| details    | varchar(255) | YES  |     | NULL    |       |
-+------------+--------------+------+-----+---------+-------+
-10 rows in set (0.00 sec)
+mysql> describe facility;<br>
++------------+--------------+------+-----+---------+-------+<br>
+| Field      | Type         | Null | Key | Default | Extra |<br>
++------------+--------------+------+-----+---------+-------+<br>
+| facilityId | int(11)      | YES  |     | NULL    |       |<br>
+| owner      | varchar(255) | YES  |     | NULL    |       |<br>
+| address1   | varchar(255) | YES  |     | NULL    |       |<br>
+| address2   | varchar(255) | YES  |     | NULL    |       |<br>
+| city       | varchar(255) | YES  |     | NULL    |       |<br>
+| state      | varchar(255) | YES  |     | NULL    |       |<br>
+| zip        | varchar(255) | YES  |     | NULL    |       |<br>
+| rate       | double       | YES  |     | NULL    |       |<br>
+| capacity   | int(11)      | YES  |     | NULL    |       |<br>
+| details    | varchar(255) | YES  |     | NULL    |       |<br>
++------------+--------------+------+-----+---------+-------+<br>
+10 rows in set (0.00 sec)<br>
 
-mysql> describe facility_use;
-+------------+--------------+------+-----+---------+-------+
-| Field      | Type         | Null | Key | Default | Extra |
-+------------+--------------+------+-----+---------+-------+
-| facilityId | int(11)      | YES  |     | NULL    |       |
-| useId      | int(11)      | YES  |     | NULL    |       |
-| tenant     | varchar(255) | YES  |     | NULL    |       |
-| startDate  | date         | YES  |     | NULL    |       |
-| endDate    | date         | YES  |     | NULL    |       |
-| status     | varchar(255) | YES  |     | NULL    |       |
-+------------+--------------+------+-----+---------+-------+
-6 rows in set (0.00 sec)
+mysql> describe facility_use;<br>
++------------+--------------+------+-----+---------+-------+<br>
+| Field      | Type         | Null | Key | Default | Extra |<br>
++------------+--------------+------+-----+---------+-------+<br>
+| facilityId | int(11)      | YES  |     | NULL    |       |<br>
+| useId      | int(11)      | YES  |     | NULL    |       |<br>
+| tenant     | varchar(255) | YES  |     | NULL    |       |<br>
+| startDate  | date         | YES  |     | NULL    |       |<br>
+| endDate    | date         | YES  |     | NULL    |       |<br>
+| status     | varchar(255) | YES  |     | NULL    |       |<br>
++------------+--------------+------+-----+---------+-------+<br>
+6 rows in set (0.00 sec)<br>
 
-mysql> describe inspections;
-+--------------+--------------+------+-----+---------+-------+
-| Field        | Type         | Null | Key | Default | Extra |
-+--------------+--------------+------+-----+---------+-------+
-| facilityId   | int(11)      | YES  |     | NULL    |       |
-| inspectId    | int(11)      | YES  |     | NULL    |       |
-| description  | varchar(255) | YES  |     | NULL    |       |
-| assignedTo   | varchar(255) | YES  |     | NULL    |       |
-| status       | varchar(255) | YES  |     | NULL    |       |
-| dateAssigned | date         | YES  |     | NULL    |       |
-| dateClosed   | date         | YES  |     | NULL    |       |
-+--------------+--------------+------+-----+---------+-------+
-7 rows in set (0.00 sec)
+mysql> describe inspections;<br>
++--------------+--------------+------+-----+---------+-------+<br>
+| Field        | Type         | Null | Key | Default | Extra |<br>
++--------------+--------------+------+-----+---------+-------+<br>
+| facilityId   | int(11)      | YES  |     | NULL    |       |<br>
+| inspectId    | int(11)      | YES  |     | NULL    |       |<br>
+| description  | varchar(255) | YES  |     | NULL    |       |<br>
+| assignedTo   | varchar(255) | YES  |     | NULL    |       |<br>
+| status       | varchar(255) | YES  |     | NULL    |       |<br>
+| dateAssigned | date         | YES  |     | NULL    |       |<br>
+| dateClosed   | date         | YES  |     | NULL    |       |<br>
++--------------+--------------+------+-----+---------+-------+<br>
+7 rows in set (0.00 sec)<br>
 
-mysql> describe maintenance_request;
-+----------------+--------------+------+-----+---------+-------+
-| Field          | Type         | Null | Key | Default | Extra |
-+----------------+--------------+------+-----+---------+-------+
-| facilityId     | int(11)      | YES  |     | NULL    |       |
-| maintenanceId  | int(11)      | YES  |     | NULL    |       |
-| maint_descript | varchar(255) | YES  |     | NULL    |       |
-| status         | varchar(255) | YES  |     | NULL    |       |
-| cost           | double       | YES  |     | NULL    |       |
-+----------------+--------------+------+-----+---------+-------+
-5 rows in set (0.00 sec)
+mysql> describe maintenance_request;<br>
++----------------+--------------+------+-----+---------+-------+<br>
+| Field          | Type         | Null | Key | Default | Extra |<br>
++----------------+--------------+------+-----+---------+-------+<br>
+| facilityId     | int(11)      | YES  |     | NULL    |       |<br>
+| maintenanceId  | int(11)      | YES  |     | NULL    |       |<br>
+| maint_descript | varchar(255) | YES  |     | NULL    |       |<br>
+| status         | varchar(255) | YES  |     | NULL    |       |<br>
+| cost           | double       | YES  |     | NULL    |       |<br>
++----------------+--------------+------+-----+---------+-------+<br>
+5 rows in set (0.00 sec)<br>
 
-mysql> describe maintenance_schedule;
-+-------------------+--------------+------+-----+---------+-------+
-| Field             | Type         | Null | Key | Default | Extra |
-+-------------------+--------------+------+-----+---------+-------+
-| facilityId        | int(11)      | YES  |     | NULL    |       |
-| start_date        | date         | YES  |     | NULL    |       |
-| end_date          | date         | YES  |     | NULL    |       |
-| maint_description | varchar(255) | YES  |     | NULL    |       |
-| maintenance_id    | int(11)      | YES  |     | NULL    |       |
-+-------------------+--------------+------+-----+---------+-------+
-5 rows in set (0.00 sec)
+mysql> describe maintenance_schedule;<br>
++-------------------+--------------+------+-----+---------+-------+<br>
+| Field             | Type         | Null | Key | Default | Extra |<br>
++-------------------+--------------+------+-----+---------+-------+<br>
+| facilityId        | int(11)      | YES  |     | NULL    |       |<br>
+| start_date        | date         | YES  |     | NULL    |       |<br>
+| end_date          | date         | YES  |     | NULL    |       |<br>
+| maint_description | varchar(255) | YES  |     | NULL    |       |<br>
+| maintenance_id    | int(11)      | YES  |     | NULL    |       |<br>
++-------------------+--------------+------+-----+---------+-------+<br>
+5 rows in set (0.00 sec)<br>
 
-mysql>
+mysql><br>

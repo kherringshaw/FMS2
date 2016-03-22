@@ -1,58 +1,58 @@
-create database fms;<br>
+create database fms;
 
-create table facility (<br>
+create table facility (
 
-	facilityId	int	not null,<br>
-	owner		varchar(255),<br>
-	address1	varchar(255),<br>
-	address2	varchar(255),<br>
-	city	varchar(255),<br>
-	state	varchar(2),<br>
-	zip	varchar(255),<br>
-	rate	double,<br>
-	capacity	int,<br>
-	details	varchar(255)<br>
+	facilityId	int	not null,
+	owner		varchar(255),
+	address1	varchar(255),
+	address2	varchar(255),
+	city	varchar(255),
+	state	varchar(2),
+	zip	varchar(255),
+	rate	double,
+	capacity	int,
+	details	varchar(255)
        
-) ;<br>
+) ;
 
-create facility_use(<br>
+create facility_use(
 
-	useId 	int	not null,<br>
-	facilityId	int,<br>
-	tenant	varchar(255),<br>
-	startDate	date,<br>
-	endDate	date,<br>
-	status	varchar(255)<br>
+	useId 	int	not null,
+	facilityId	int,
+	tenant	varchar(255),
+	startDate	date,
+	endDate	date,
+	status	varchar(255)
 
-) ;<br>
+) ;
 
 
-create inspections(<br>
-	facilityId	int,<br>
-	inspectId	int	not null,<br>
-	description	varchar(255),<br>
-	assignedTo	varchar(255),<br>
-	status	varchar(255),<br>
-	dateAssigned	date,<br>
-	dateClosed		date<br>
+create inspections(
+	facilityId	int,
+	inspectId	int	not null,
+	description	varchar(255),
+	assignedTo	varchar(255),
+	status	varchar(255),
+	dateAssigned	date,
+	dateClosed		date
 
-) ;<br>
+) ;
 
-create maintenance_request(<br>
-	maintenanceId	int(11) 	not null,<br>
-	facilityId	int,<br>
-	maint_descript	varchar(255),<br>
-	status	varchar(255),<br>
-	cost		double<br>
-);<br>
+create maintenance_request(
+	maintenanceId	int(11) 	not null,
+	facilityId	int,
+	maint_descript	varchar(255),
+	status	varchar(255),
+	cost		double
+);
 
-create maintenance_schedule (<br>
-	maintenance_id	int(11) 	not null,<br>
-	facilityId	int(11),<br>
-	start_date	date,<br>
-	end_date	date,<br>
-	maint_description	varchar(255)<br>
-);<br>
+create maintenance_schedule (
+	maintenance_id	int(11) 	not null,
+	facilityId	int(11),
+	start_date	date,
+	end_date	date,
+	maint_description	varchar(255)
+);
 
 
 /* set up for tables -- 3/22/16 */

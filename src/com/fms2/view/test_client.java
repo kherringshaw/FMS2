@@ -21,8 +21,8 @@ public class test_client {
         Facility facility2 = new Facility(2, "Arden", "800 W. Monroe", "Ste 1000", "Chicago", "IL", "60601", 30.0, 1200);
         Calendar startDate = Calendar.getInstance();;
         Calendar endDate = Calendar.getInstance();;
-        startDate.set(2015, 01, 15);
-        endDate.set(2015, 01, 18);
+        startDate.set(2016, 01, 15);
+        endDate.set(2016, 01, 18);
 
 
         

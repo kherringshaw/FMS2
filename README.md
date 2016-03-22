@@ -1,5 +1,5 @@
 "# FMS2" 
-
+<p style="font-family:courier;">
 Database setup:<br>
 
 
@@ -90,3 +90,4 @@ mysql> describe maintenance_schedule;<br>
 5 rows in set (0.00 sec)<br>
 
 mysql><br>
+</p>

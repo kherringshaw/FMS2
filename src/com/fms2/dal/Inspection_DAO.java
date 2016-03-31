@@ -10,7 +10,7 @@ import java.util.Calendar;
 import java.util.List;
 import java.sql.Date;
 
-import com.fms2.model.Facility_Inspections;
+import com.fms2.model.Facility_Inspection;
 import com.fms2.model.Facility_MaintReq;
 import com.fms2.model.Facility_Use;
 
@@ -43,8 +43,8 @@ public class Inspection_DAO {
 
 
 
-	public List<Facility_Inspections> listInspections(int facilityId) {
-        List<Facility_Inspections> inspectList = new ArrayList<>();
+	public List<Facility_Inspection> listInspections(int facilityId) {
+        List<Facility_Inspection> inspectList = new ArrayList<>();
 
         try {
             Connection conn = DBHelper.getConnection();
@@ -53,7 +53,7 @@ public class Inspection_DAO {
             ResultSet rs = ps.executeQuery();
 
             while (rs.next()) {
-            	inspectList.add(new Facility_Inspections(rs.getInt("facilityId"),rs.getInt("inspectId"),  rs.getString("description"), rs.getString("assignedTo"), rs.getString("status")));
+            	inspectList.add(new Facility_Inspection(rs.getInt("facilityId"),rs.getInt("inspectId"),  rs.getString("description"), rs.getString("assignedTo"), rs.getString("status")));
 
             }
         } catch (SQLException se) {

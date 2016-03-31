@@ -4,7 +4,7 @@ package com.fms2.model;
 import java.util.Calendar;
 
 
-public class Facility_Inspections {
+public class Facility_Inspection {
 
     private int maintId;
     private int facilityId;
@@ -16,7 +16,7 @@ public class Facility_Inspections {
     
     //inspect.createInspection(3, 101, "need parking lot restriped", "Eric", "open", dateAssigned, dateClosed);
 
-    public Facility_Inspections(int facilityId, int maintId, String description, String assignedTo, String status, Calendar dateAssigned, Calendar dateClosed) {
+    public Facility_Inspection(int facilityId, int maintId, String description, String assignedTo, String status, Calendar dateAssigned, Calendar dateClosed) {
         this.maintId = maintId;
         this.facilityId = facilityId;
         this.description = description;
@@ -26,7 +26,7 @@ public class Facility_Inspections {
         this.status = status;
     }
 
-    public Facility_Inspections(int facilityId, int maintId, String description, String assignedTo, String status) {
+    public Facility_Inspection(int facilityId, int maintId, String description, String assignedTo, String status) {
         this.maintId = maintId;
         this.facilityId = facilityId;
         this.description = description;

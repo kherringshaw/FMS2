@@ -4,7 +4,7 @@ package com.fms2.activities;
 import com.fms2.dal.Facility_DAO;
 import com.fms2.dal.Inspection_DAO;
 import com.fms2.dal.Use_DAO;
-import com.fms2.model.Facility_Inspections;
+import com.fms2.model.Facility_Inspection;
 
 
 import java.util.Calendar;
@@ -31,7 +31,7 @@ public class Inspection_Activities {
 	}
 
 	//queries the facilities inspections both completed and open
-	public List<Facility_Inspections> listInspections(int facilityId) {
+	public List<Facility_Inspection> listInspections(int facilityId) {
 		try {
 			return inspectDAO.listInspections(facilityId);
 
